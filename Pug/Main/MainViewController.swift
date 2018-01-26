@@ -16,6 +16,8 @@ class MainViewController: BaseViewController {
     
     var getPugLock = false
     
+    var longPressGesture:UILongPressGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +26,17 @@ class MainViewController: BaseViewController {
                 self.pugs = pugs
                 self.collectionView.reloadData()
             }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.longPressGesture == nil {
+            self.longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+            self.longPressGesture!.minimumPressDuration = 0.7
+            self.longPressGesture!.delaysTouchesBegan = true
+            self.collectionView.addGestureRecognizer(self.longPressGesture!)
         }
     }
 
@@ -37,6 +50,34 @@ class MainViewController: BaseViewController {
             let vc = segue.destination as! DetailViewController
             vc.title = "Detail"
             vc.pugURLString = self.selectedPug
+        }
+    }
+    
+    @objc func longPress(gesture:UILongPressGestureRecognizer) {
+        
+        switch gesture.state {
+        case .began :
+            let p = gesture.location(in: self.collectionView)
+            if let indexPath = self.collectionView.indexPathForItem(at: p) {
+                // get the cell at indexPath (the one you long pressed)
+                let currentHighlightedCell = self.collectionView.cellForItem(at: indexPath) as? MainCollectionViewCell
+                // do stuff with the cell
+                print("We're gonna copy a pug to clipboard!")
+            } else {
+                print("couldn't find index path")
+            }
+            break
+        case.cancelled :
+            break
+        case.possible :
+            break
+        case.changed :
+            //this can happen a lot, but we don't care... if the user started a long press they get whatever they started as an action.  hence the property currentHighlightedCell.
+            break
+        case.failed :
+            break
+        case.ended :
+            break
         }
     }
 
