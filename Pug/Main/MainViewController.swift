@@ -63,6 +63,9 @@ class MainViewController: BaseViewController {
                 let currentHighlightedCell = self.collectionView.cellForItem(at: indexPath) as? MainCollectionViewCell
                 // do stuff with the cell
                 print("We're gonna copy a pug to clipboard!")
+                UIPasteboard.general.image = currentHighlightedCell?.imageThumb.image
+                
+                self.showAlert(title: "Copied!", message: "Pug copied to clipboard!")
             } else {
                 print("couldn't find index path")
             }
