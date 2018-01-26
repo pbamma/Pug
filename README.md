@@ -3,6 +3,7 @@ https://gist.github.com/moviestaylorwhere/782554e384e82f3520fbe0cc716ecdc3
 
 Using Swift, write an app that calls this endpoint: https://pugme.herokuapp.com/bomb?count=50 and show the results in a grid.
 
+![](http://i.imgur.com/ZbdSh73.jpg)
 
 ---------------------------------------------------------------------------------
 
@@ -33,5 +34,7 @@ https://pugme.herokuapp.com/bomb?count=50
 
 
 # Dev Notes
+- Some of the image URLs returned from the API are broken, but will work by removing the numeric sub-domain from the beginning of the URL. For instance, http://30.media.tumblr.com/tumblr_lqexmferHa1qg02ino1_500.jpg needs to be changed to http://media.tumblr.com/tumblr_lqexmferHa1qg02ino1_500.jpg.
 
+WARNING: The info.plist allows arbitrary loads.  This is not sufficient for a released app and must be removed prior to release.
 

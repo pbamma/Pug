@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="QKH-KD-taJ">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="qtu-Qp-01Y" customClass="DetailViewController" customModule="Pug" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K2C-Rg-f8k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HMI-JT-n8c">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HMI-JT-n8c" firstAttribute="width" secondItem="K2C-Rg-f8k" secondAttribute="width" id="5eO-FE-JVe"/>
+                            <constraint firstItem="HMI-JT-n8c" firstAttribute="centerY" secondItem="K2C-Rg-f8k" secondAttribute="centerY" id="714-GI-yF8"/>
+                            <constraint firstItem="HMI-JT-n8c" firstAttribute="height" secondItem="K2C-Rg-f8k" secondAttribute="height" id="kBU-Up-Unz"/>
+                            <constraint firstItem="HMI-JT-n8c" firstAttribute="centerX" secondItem="K2C-Rg-f8k" secondAttribute="centerX" id="ubr-jN-uwa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="piE-J6-AlN"/>
+                    </view>
+                    <connections>
+                        <outlet property="pugImage" destination="HMI-JT-n8c" id="fK0-iD-3m9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZrA-dz-aCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="-322"/>
+        </scene>
+    </scenes>
+</document>
